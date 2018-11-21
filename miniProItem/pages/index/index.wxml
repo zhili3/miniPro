@@ -1,18 +1,63 @@
-<!--index.wxml-->
+<!-- index.wxml -->
 <view class="container">
     <view class="swiper-container">
-        <swiper class="swiper_box" 
-                    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+        <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
             <block wx:for="{{banners}}" wx:key="id">
                 <swiper-item>
-                    <image bindtap="tapBanner" data-id="{{item.businessId}}" src="{{item.picUrl}}_m" class="slide-image" width="750rpx" height="562.5rpx"/>
+                    <image bindtap="tapBanner" data-id="{{item.businessId}}" src="{{item.picUrl}}_m" class="slide-image" width="750rpx" height="562.5rpx" />
                 </swiper-item>
             </block>
         </swiper>
-        <view class="dots">  
-            <block wx:for="{{banners}}" wx:key="unique">  
-                <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>  
-            </block>  
-        </view>  
-   </view>
+        <view class="dots">
+            <block wx:for="{{banners}}" wx:key="unique">
+                <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+            </block>
+        </view>
+    </view>
+    <view class="search-bolck">
+        <view class="search-content">
+            <image src="/images/search-pic.png" alt="" />
+            <input type="text" placeholder="请输入搜索内容" />
+            <button type="default" hover-class="none">搜索</button>
+        </view>
+    </view>
+    <view class="menu_container">
+        <scroll-view scroll-x class="menu_tab">
+            <view wx:for="{{categories}}" wx:key="id" class="tab_item">
+                <view id="{{item.id}}" class="items {{item.id == activeCategoryId ? 'active': ''}}" bindtap="tabClick">
+                    {{item.name}}
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="notice" wx:if="{{noticeList.length != 0}}">
+        <view class="notice_title">公告：</view>
+        <swiper class="notice_swiper" autoplay="{{autoplay}}" vertical="{{true}}" interval="{{interval}}" duration="{{duration}}">
+            <navigator wx:for="{{noticeList}}" wx:key="id" url="/pages/notice/show?id={{item.id}}" open-type="navigate">
+                <swiper-item>
+                    <view class="notice_itemr">{{item.title}}</view>
+                </swiper-item>
+            </navigator>
+        </swiper>
+    </view>
+    <view class="coupon_container">
+        <scroll-view class="coupon_scroll" scroll-x >
+            <view class="coupon_item" wx:for="{{coupons}}" wx:key="id">
+                <view class="coupon_title">￥ {{item.moneyMax}}元</view>
+                <view class="discount_text">{{item.name}}</view>
+                <view class="more_money">满{{item.moneyHreshold}}元使用</view>
+                <view class="valid" wx:if="{{item.dateEndType == 0}}">{{item.dateEnd}}前有效</view>
+                <view class="valid" wx:if="{{item.dateEndType == 1}}">领取{{item.dateEndDays}}天内有效</view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="goods_list">
+        <view class="goods_item">
+            <view class="goods_img">
+                <image src="" />
+            </view>
+            <view class="goods_title"></view>
+            <view class="goods_price"></view>
+        </view>
+    </view>
 </view>

@@ -39,3 +39,133 @@ swiper-item image {
   width: 14rpx;  
   opacity: 1;
 }
+.search-bolck{
+  width:100%;
+  height: 100rpx;
+  box-sizing: border-box;
+  position: fixed;
+  left:0;
+  top:0;
+  background-color: green;
+  padding:20rpx 40rpx;
+ 
+}
+.search-content{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius:8rpx;
+  width: 80%;
+  height: 60rpx;
+  background-color: #fff;
+  padding-left:28rpx; 
+  margin:auto;
+}
+.search-content image{
+  width: 46rpx;
+  height: 46rpx;
+  vertical-align: 4rpx;
+}
+.search-content input{
+  flex:1;
+  height: 100%;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  padding:0 10rpx;
+}
+.search-content button{
+  width: 150rpx;
+  height: 100%;
+  line-height: 60rpx;
+  background-color: blueviolet;
+  color:#fff;
+  font-size: 28rpx;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+/* 菜单栏 */
+.menu_container{
+  width:100%;
+  height:88rpx;
+  background-color:#fff;
+  overflow:hidden;
+  
+}
+.menu_tab{
+  white-space:nowrap;
+  height:88rpx;
+  width:100%;
+  background-color:#fff;
+  
+}
+.menu_tab .tab_item{
+  width:160rpx;
+  box-sizing:content-box;
+  font-size:24rpx;
+  line-height:84rpx;
+  text-align:center;
+  display:inline-block;
+  overflow:hidden;
+
+}
+.tab_item .items{
+  border-bottom: 4rpx solid #fff;
+}
+.tab_item .active{
+  border-bottom: 4rpx solid #e64340;
+}
+/* 公告开始 */
+.notice{
+  width: 100%;
+  height: 76rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  margin:16rpx 0;
+}
+.notice .notice_title{
+  width:80rpx;
+  font-size: 26rpx;
+  padding-left: 25rpx;
+  color:#999;
+}
+.notice_swiper{
+  width: 600rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.notice_itemr{
+  padding-left:10rpx;
+font-size:26rpx;
+overflow:hidden;
+color:#e64340;
+width:635rpx;
+height:50rpx;
+line-height:50rpx;
+}
+/* 公告结束 */
+/* 优惠券部分开始 */
+.coupon_scroll{
+  white-space: nowrap;
+}
+.coupon_item{
+  width: 300rpx;
+  height: 180rpx;
+  display: inline-block;
+  padding:18rpx 20rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  box-sizing: border-box;
+  color:#fff;
+  font-size: 20rpx;
+  line-height: 35rpx;
+  background-color: #f1a83b;
+}
+.coupon_item .coupon_title{
+  font-size: 35rpx;
+  
+}
+.discount_text{font-size: 26rpx;padding:8rpx 0;}
+.more_money,
+.valid{font-size: 22rpx;}
+/* 优惠券部分结束 */
